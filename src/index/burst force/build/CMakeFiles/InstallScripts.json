@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/usr/GPU/GPU-ANNS-Benchmark/src/index/burst force/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

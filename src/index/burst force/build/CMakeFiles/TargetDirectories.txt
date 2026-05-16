@@ -1,0 +1,3 @@
+/usr/GPU/GPU-ANNS-Benchmark/src/index/burst force/build/CMakeFiles/test.dir
+/usr/GPU/GPU-ANNS-Benchmark/src/index/burst force/build/CMakeFiles/edit_cache.dir
+/usr/GPU/GPU-ANNS-Benchmark/src/index/burst force/build/CMakeFiles/rebuild_cache.dir

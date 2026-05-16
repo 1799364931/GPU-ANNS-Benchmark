@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/usr/GPU/GPU-ANNS-Benchmark/src/index/burst force/build",
+  "command": "/usr/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/usr/bin/g++-11 -DHDF_NO_NAMESPACE -DNO_STATIC_CAST -DOLD_HEADER_FILENAME --options-file CMakeFiles/test.dir/includes_CUDA.rsp -std=c++14 -x cu -c \"/usr/GPU/GPU-ANNS-Benchmark/src/index/burst force/indexTest.cu\" -o CMakeFiles/test.dir/indexTest.cu.o",
+  "file": "/usr/GPU/GPU-ANNS-Benchmark/src/index/burst force/indexTest.cu",
+  "output": "CMakeFiles/test.dir/indexTest.cu.o"
+}
+]

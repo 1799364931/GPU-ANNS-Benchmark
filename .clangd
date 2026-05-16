@@ -1,0 +1,10 @@
+CompileFlags:
+  Add: [
+    "-x", "cuda",
+    "--cuda-gpu-arch=sm_80",
+    "-I/usr/include",
+    "-I/usr/local/cuda/include",
+    "-L/usr/lib/x86_64-linux-gnu",
+    "-D__CUDA_ARCH__=800",
+    "--cuda-path=/usr/lib/cuda" # 尝试指向你刚才发现的那个路径
+  ]

@@ -1,0 +1,1 @@
+/usr/bin/g++-11 @CMakeFiles/test.dir/objects1.rsp -o test @CMakeFiles/test.dir/linkLibs.rsp -L"/usr/lib/x86_64-linux-gnu/stubs" -L"/usr/lib/x86_64-linux-gnu"
