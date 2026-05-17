@@ -1,6 +1,7 @@
 #include "/usr/GPU/GPU-ANNS-Benchmark/src/uitls/dataset/IOUitls.hpp"
 #include "index.cuh"
 #include <cstdint>
+#include <cstdlib>
 #include <iostream>
 #include <vector>
 using namespace burst_force;
@@ -27,28 +28,22 @@ int main() {
 
   std::cout << "construct success\n";
 
-  // float avg_recallk = 0;
-  for (int i = 0; i < 1; i++) {
+  float avg_recallk = 0;
+  for (int i = 0; i < 1000; i++) {
     std::vector<uint32_t> result(SIFT_QUERY_DIM);
     index.query(test.data() + i * SIFT_DATASET_DIM, SIFT_QUERY_DIM,
                 result.data());
     // calculate recall topk
-    // int hit = 0;
-    for (int k = 0; k < SIFT_DATASET_DIM; k++) {
-      std::cout << result[k] << " ";
-      std::cout << neighbors[k + i * SIFT_DATASET_DIM] << "\n";
+    int hit = 0;
+    for (int k = 0; k < SIFT_QUERY_DIM; k++) {
+      for (int j = 0; j < SIFT_QUERY_DIM; j++) {
+        if (result[j] == neighbors[k + i * SIFT_QUERY_DIM]) {
+          hit++;
+          break;
+        }
+      }
     }
-    // for (int k = 0; k < SIFT_DATASET_DIM; k++) {
-
-    //   for (int j = 0; j < SIFT_DATASET_DIM; j++) {
-    //     if (result[j] == neighbors[k + i * SIFT_DATASET_DIM]) {
-    //       hit++;
-    //       break;
-    //     }
-    //   }
-    //   avg_recallk += 1.0 * hit / SIFT_DATASET_DIM;
-    // }
+    avg_recallk += 1.0 * hit / SIFT_QUERY_DIM;
   }
-//   avg_recallk /= 1000;
-//   std::cout << avg_recallk << "\n";
+  std::cout << avg_recallk << "\n";
 }
